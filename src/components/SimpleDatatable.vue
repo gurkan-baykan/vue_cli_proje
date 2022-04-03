@@ -53,10 +53,21 @@
         mdi-delete
       </v-icon>
     </template>
-      <template v-slot:expanded-item="{ headers, item }">
-        
-       
-          <td  >
+      <template v-slot:expanded-item="{ headers, item }" >
+       <template  v-if="item.kira_bilgileri">
+          <td colspan="8">
+             <v-simple-table dense>
+            <template v-slot:default>
+              <thead>
+               <tr>
+                <th   colspan="8" class="text-center title">
+            Kiralama Bilgileri
+        </th>
+          </tr>
+              </thead>
+              <tbody>
+                <tr>
+            <td  >
             {{ item.kira_bilgileri.name }}
         </td>
         <td>
@@ -71,6 +82,20 @@
         <td>
            {{ item.kira_bilgileri.select }}
         </td>
+           </tr>
+              </tbody>
+            </template>
+          </v-simple-table>
+          </td>
+          
+
+         
+      
+     
+          
+          
+       
+      </template>
        
      
     </template>
